@@ -6,7 +6,7 @@
   var filename = 'audiofile'
   var langs
 
-  $.get('http://api.ispeech.org/api/rest?apikey=developerdemokeydeveloperdemokey&action=information&output=json', data => {
+  $.get('//api.ispeech.org/api/rest?apikey=developerdemokeydeveloperdemokey&action=information&output=json', data => {
     langs = []
     console.log(data)
     for (var k in data) {
@@ -23,7 +23,7 @@
   function set (text, lang, clb) {
     setLang(lang)
 
-    var url = `http://api.ispeech.org/api/rest?apikey=${apikey}&action=convert&text=${text}&voice=${voice}&format=mp3&frequency=44100&bitrate=256&speed=1&startpadding=1&endpadding=1&pitch=110&filename=${filename}`
+    var url = `//api.ispeech.org/api/rest?apikey=${apikey}&action=convert&text=${text}&voice=${voice}&format=mp3&frequency=44100&bitrate=256&speed=1&startpadding=1&endpadding=1&pitch=110&filename=${filename}`
 
     speaker = new Audio(url)
 
