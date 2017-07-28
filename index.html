@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <input id="inp" value="Ciao Pino" type="text" />   
+    <select id="langs">
+        <option value="it">it</option>
+        <option value="en">en</option>
+        <option value="es">es</option>
+    </select>
+    <button id="load">Load</button>
+    <button id="play">Play</button>
+
+<script
+  src="http://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+
+      <script type="text/javascript" src="TTS.js"></script>
+
+    <script type="text/javascript">
+
+
+        $('#play').hide()
+
+        $('#load').on('click', function(){
+            $('#play').hide()
+            var t = $('#inp').val()
+            var l = $('#langs').val()
+            window.TTS.set(t, l, function(){
+                $('#play').show()
+            })
+        })
+
+        $('#play').on('click', function(){
+            window.TTS.play()
+        })
+
+    </script>
+</body>
+</html>
